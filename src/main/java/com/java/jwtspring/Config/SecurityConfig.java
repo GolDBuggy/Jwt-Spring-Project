@@ -37,7 +37,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity https) throws Exception{
         https.csrf().disable();
-        https.authorizeRequests().antMatchers("/save","/login","/generate").permitAll().and()
+        https.authorizeRequests().antMatchers("/save","/login").permitAll().and()
                 .authorizeRequests().anyRequest().authenticated().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         https.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);

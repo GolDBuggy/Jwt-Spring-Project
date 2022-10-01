@@ -29,7 +29,7 @@ public class MemberController {
     }
 
 
-    @PostMapping("/generate")
+    @PostMapping("/login")
     public ResponseEntity<String> tokenGenerate(@RequestBody AuthRequest authRequest){
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 authRequest.getUsername(),authRequest.getPassword()));

@@ -25,4 +25,7 @@ public class Member {
 
     @Column(name = "pass")
     private String password;
+
+    @Column(name = "roles")
+    private String roles;
 }
